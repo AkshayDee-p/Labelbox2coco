@@ -33,7 +33,7 @@ def add_label(
         "coco_url": image_url,
         "date_captured": None,
     }
-    image['width'], image['height'] = Image.open('F:/New_Dataset/Converters/Data_Converter_Labelbox_json/data/'+image_url).size
+    image['width'], image['height'] = Image.open('<Image-Folder>'+image_url).size
     coco['images'].append(image)
     if not callable(getattr(labels, 'keys', None)):
         return
@@ -49,8 +49,7 @@ def add_label(
                 "segmentation": [[x['bbox']['left'], x['bbox']['top'], x['bbox']['left'] + x['bbox']['width'],x['bbox']['top'] ,
                                   x['bbox']['left'] + x['bbox']['width'],x['bbox']['top'] + x['bbox']['height'], x['bbox']['left'],x['bbox']['top'] + x['bbox']['height'] ]],
                 "area": x['bbox']['width']*x['bbox']['height'],  # float
-                "bbox": [x['bbox']['left'], x['bbox']['top'], x['bbox']['left'] + x['bbox']['width'], x['bbox']['top'] +
-                         x['bbox']['height']],
+                "bbox": [x['bbox']['left'], x['bbox']['top'], x['bbox']['width'], x['bbox']['height']],
                 "iscrowd": 0
             }
             coco['annotations'].append(annotation)
