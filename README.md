@@ -14,6 +14,8 @@ Key Points:-
 
 
 V1.0 added train_test_data to convert data from labelbox json export to coco this file handles the situation what the labelboxcoco file cant handle 
-Eg. One image containing multiple annotation
+like:-
+--> One image containing multiple annotation
+--> Corrected the bbox previously it was taking x,y,x+width,y+height to x,y,width,height
 
 
